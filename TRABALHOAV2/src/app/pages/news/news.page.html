@@ -1,0 +1,86 @@
+<ion-header>
+  <ion-toolbar style="background-color:rgb(71, 11, 11);">
+  <div style="background-color:rgb(71, 11, 11);color:white; text-align: center;">
+    <br>  Flu News - O app de notícias do Fluminense <br><br></div>
+    
+    
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+   
+  </ion-toolbar>
+  
+</ion-header>
+
+
+
+  <ion-content [fullscreen]="true">
+   
+     <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button color="primary" (click)="Rotas(['/login'])">
+        <ion-icon name="exit"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+        
+        <ion-tab-button tab="news"(click)="Rotas(['/news'])">
+          <ion-icon name="document-text-outline"></ion-icon>      
+          <ion-label>Notícias</ion-label>
+        </ion-tab-button>
+    
+        <ion-tab-button (click)="Rotas(['/local'])" tab="map" >
+          <ion-icon name="map"></ion-icon>
+          <ion-label>Localização</ion-label>
+        </ion-tab-button>
+    
+        <ion-tab-button tab="about"(click)="Rotas(['/home'])">
+          <ion-icon name="information-circle"></ion-icon>
+          <ion-label>Contato</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+    
+   <ion-card *ngFor="let article of articles">
+      
+      <ion-card-header>
+        <ion-img [src]="article.urlToImage"></ion-img>
+       
+         <ion-card-subtitle>{{article.publishedAt}}</ion-card-subtitle>
+        <ion-card-title>{{article.title}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>{{article.description}}</ion-card-content>
+   </ion-card>
+  
+</ion-content>
+
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      
+      <ion-tab-button tab="news"(click)="Rotas(['/news'])">
+        <ion-icon name="document-text-outline"></ion-icon>      
+        <ion-label>Notícias</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button (click)="Rotas(['/local'])" tab="map" >
+        <ion-icon name="map"></ion-icon>
+        <ion-label>Localização</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="about"(click)="Rotas(['/home'])">
+        <ion-icon name="information-circle"></ion-icon>
+        <ion-label>Contato</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+
+
+  <!---  <ion-img [src]="'https://image.tmdb.org/t/p/w200/'+filme.backdrop_path"></ion-img>
+ 
+    <ion-refresher slot="fixed" (ionRefresh)="efeitoRefresh($event)">
+  
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+-->
+
+

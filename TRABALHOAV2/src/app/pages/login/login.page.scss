@@ -1,0 +1,37 @@
+
+.ion-content{
+   height: 45%;
+}
+.principal{
+   background:rgb(71, 11, 11);
+   color:white;
+    height: 100%;
+    background-image:url('/assets/img/FluBG.png');
+   background-size: cover;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-repeat: no-repeat;
+
+}
+.login{
+   color:white;
+   font-size: 3pc;
+   height: 10%;
+   margin-left: 10%; 
+   margin-right: 10%;
+   text-align: center;
+}
+.button{
+width: 100%; 
+}
+.segment{
+--color:green;
+--color-checked:green;
+--color-focused:green;
+--color-hover:green;
+--background-focused:green;
+--background-hover: green;
+--indicator-color: green;
+
+}

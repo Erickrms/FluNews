@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar style="background-color:rgb(71, 11, 11);">
+  <div style="background-color:rgb(71, 11, 11);color:white; text-align: center;">
+    <br>  Flu News - O app de notícias do Fluminense <br><br></div>
+    
+    
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+   
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button color="primary" (click)="Rotas(['/login'])">
+        <ion-icon name="exit"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+
+  <h1 style="color: white;"> Flu News</h1>
+  <p style="color: white;">
+   Este aplicativo foi criado para os torcedores do Fluminense recebam as principais notícias do clube.<br><br>
+   Desenvolvido por : Erick Menezes<br>
+   Facebook :<a href=" https://www.facebook.com/Erickmenezess"> Erick Menezes"</a><br>
+   Instagram : <a href="https://www.instagram.com.br/erick_menezess">@erick_menezess</a><br><br><br><br>
+   Versão : 1.0
+
+
+  <p>
+
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+        
+        <ion-tab-button tab="news"(click)="Rotas(['/news'])">
+          <ion-icon name="document-text-outline"></ion-icon>      
+          <ion-label>Notícias</ion-label>
+        </ion-tab-button>
+    
+        <ion-tab-button (click)="Rotas(['/local'])" tab="map" >
+          <ion-icon name="map"></ion-icon>
+          <ion-label>Localização</ion-label>
+        </ion-tab-button>
+    
+        <ion-tab-button tab="about"(click)="Rotas(['/home'])">
+          <ion-icon name="information-circle"></ion-icon>
+          <ion-label>Contato</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+</ion-content>
+
+  
+
+

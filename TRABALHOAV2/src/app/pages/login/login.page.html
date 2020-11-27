@@ -1,0 +1,62 @@
+<ion-header>
+    <div style="background-color:rgb(71, 11, 11);color:white; text-align: center;">
+      <br>  Flu News - O app de notícias do Fluminense <br><br></div>
+</ion-header>
+<ion-content>
+       
+        <ion-segment style="text-align: center; background:rgb(71, 11, 11);color: green; " (ionChange)="segmentChanged($event)" value="login">
+            <ion-segment-button value="login" >
+                <ion-label>Login</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="register">
+                <ion-label>Cadastro</ion-label>
+            </ion-segment-button>
+
+        </ion-segment>
+      <div class="principal">  
+          <ion-slides>
+
+            <ion-slide>
+
+                <div class="login slide-inner ion-padding">
+                    <span>Login</span><br><br><br><br>
+                    <ion-item class="ion-margin-top" lines="none">
+                        <ion-input type="Email" placeholder="Email" [(ngModel)]="email" >
+                        </ion-input>
+                    </ion-item>
+                    <ion-item class="ion-margin-top" lines="none">
+                        <ion-input type="password" placeholder="Senha"[(ngModel)]="senha" >
+                        </ion-input>
+                    </ion-item>
+                    <ion-button class="ion-margin-top button" (click)="login()" color="light" expanded="Block">
+                        Entrar
+                    </ion-button>
+                </div>
+            </ion-slide>
+            <ion-slide>
+
+                <div class="login slide-inner ion-padding">
+                    <span>Cadastro</span><br><br><br><br>
+                    
+                    <ion-item class="ion-margin-top" lines="none">
+                        <ion-input type="Email" placeholder="Email"[(ngModel)]="email">
+                        </ion-input>
+                    </ion-item>
+                    <ion-item class="ion-margin-top" lines="none">
+                        <ion-input type="password" placeholder="Senha"[(ngModel)]="senha">
+                        </ion-input>
+                    </ion-item>
+                    <ion-button class="ion-margin-top button" (click)="insereUsuario()" color="light" expanded="Block">
+                        Cadastrar
+                    </ion-button>
+                </div>
+            </ion-slide>
+        </ion-slides>
+    </div>
+
+
+</ion-content>
+<ion-footer>
+    <div style="background-color:rgb(71, 11, 11);color:white; text-align: center;">
+        Criado por Erick Menezes - 2020</div>
+</ion-footer>
