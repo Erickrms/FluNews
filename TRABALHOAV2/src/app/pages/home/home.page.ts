@@ -10,11 +10,13 @@ import { LoadingController} from '@ionic/angular'
 
 export class HomePage implements OnInit {
  
+ 
   constructor(private menu: MenuController,public router:Router,public loadingController:LoadingController) { }
+ 
   async efeitoLoading() {
     const loading = await this.loadingController.create({
       message: 'Carregando...',
-      duration: 2000
+      duration: 1000
     });
     await loading.present();
     const {role,data} =await loading.onDidDismiss();

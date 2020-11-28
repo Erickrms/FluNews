@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NoticiasService } from '../noticias.service';
 import { Router} from '@angular/router';
-import { LoadingController } from '@ionic/angular';
+import { LoadingController, MenuController } from '@ionic/angular';
 
 
 @Component({
@@ -12,13 +12,13 @@ import { LoadingController } from '@ionic/angular';
 })
 export class NewsPage implements OnInit {
 
-  constructor(public noticiasService:NoticiasService,public router:Router,public loadingController:LoadingController) { 
+  constructor(public menuCtrl:MenuController,public noticiasService:NoticiasService,public router:Router,public loadingController:LoadingController) { 
     
   }
   async efeitoLoading() {
     const loading = await this.loadingController.create({
       message: 'Carregando...',
-      duration: 2000
+      duration: 1000
     });
     await loading.present();
     const {role,data} =await loading.onDidDismiss();
@@ -34,8 +34,20 @@ export class NewsPage implements OnInit {
 
   public lista_artigos = new Array<any>();
 public articles;
+ 
   ngOnInit() {
+    this.menuCtrl.enable(true);
+    
   }
+  ngAfterContentInit()  {
+    this.menuCtrl.enable(true);
+   
+  }
+  ngAfterViewInit() {
+    this.menuCtrl.enable(true);
+   
+  }
+  
   ionViewDidEnter(){
     this.efeitoLoading();
     this.carregaNoticias()

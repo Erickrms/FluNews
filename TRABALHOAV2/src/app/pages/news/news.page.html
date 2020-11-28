@@ -15,31 +15,9 @@
 
 
   <ion-content [fullscreen]="true">
-   
-     <ion-fab vertical="top" horizontal="end" slot="fixed">
-    <ion-fab-button color="primary" (click)="Rotas(['/login'])">
-        <ion-icon name="exit"></ion-icon>
-      </ion-fab-button>
-    </ion-fab>
-    <ion-tabs>
-      <ion-tab-bar slot="bottom">
-        
-        <ion-tab-button tab="news"(click)="Rotas(['/news'])">
-          <ion-icon name="document-text-outline"></ion-icon>      
-          <ion-label>Notícias</ion-label>
-        </ion-tab-button>
     
-        <ion-tab-button (click)="Rotas(['/local'])" tab="map" >
-          <ion-icon name="map"></ion-icon>
-          <ion-label>Localização</ion-label>
-        </ion-tab-button>
+  
     
-        <ion-tab-button tab="about"(click)="Rotas(['/home'])">
-          <ion-icon name="information-circle"></ion-icon>
-          <ion-label>Contato</ion-label>
-        </ion-tab-button>
-      </ion-tab-bar>
-    </ion-tabs>
     
    <ion-card *ngFor="let article of articles">
       
@@ -54,25 +32,6 @@
   
 </ion-content>
 
-  <ion-tabs>
-    <ion-tab-bar slot="bottom">
-      
-      <ion-tab-button tab="news"(click)="Rotas(['/news'])">
-        <ion-icon name="document-text-outline"></ion-icon>      
-        <ion-label>Notícias</ion-label>
-      </ion-tab-button>
-  
-      <ion-tab-button (click)="Rotas(['/local'])" tab="map" >
-        <ion-icon name="map"></ion-icon>
-        <ion-label>Localização</ion-label>
-      </ion-tab-button>
-  
-      <ion-tab-button tab="about"(click)="Rotas(['/home'])">
-        <ion-icon name="information-circle"></ion-icon>
-        <ion-label>Contato</ion-label>
-      </ion-tab-button>
-    </ion-tab-bar>
-  </ion-tabs>
 
 
   <!---  <ion-img [src]="'https://image.tmdb.org/t/p/w200/'+filme.backdrop_path"></ion-img>

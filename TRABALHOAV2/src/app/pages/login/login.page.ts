@@ -5,6 +5,7 @@ import { Router} from '@angular/router';
 import { ToastController} from '@ionic/angular';
 import { AutenticacaoService } from '../autenticacao.service';
 import { LoadingController} from '@ionic/angular'
+import { MenuController } from '@ionic/angular';
 
 
 @Component({
@@ -14,10 +15,8 @@ import { LoadingController} from '@ionic/angular'
 })
 export class LoginPage implements OnInit {
   @ViewChild(IonSlides) slides:IonSlides;
-  constructor( public autenticacaoService: AutenticacaoService,public loadingController:LoadingController, public router:Router,public toastController:ToastController, loading:LoadingController) { }
+  constructor( public autenticacaoService: AutenticacaoService, public menuCtrl:MenuController,public loadingController:LoadingController, public router:Router,public toastController:ToastController, loading:LoadingController) { }
 
-  ngOnInit() {
-  }
 segmentChanged(event:any){
 if (event.detail.value ==="login"){
   this.slides.slidePrev();
@@ -54,10 +53,29 @@ if (event.detail.value ==="login"){
   async efeitoLoading() {
     const loading = await this.loadingController.create({
       message: 'Carregando...',
-      duration: 2000
+      duration: 1000
     });
     await loading.present();
     const {role,data} =await loading.onDidDismiss();
+  }
+  sair(){
+    navigator['app'].exitApp();
+  }
+  ngOnInit() {
+    this.menuCtrl.enable(false);
+    
+  }
+  ngAfterContentInit()  {
+    this.menuCtrl.enable(false);
+   
+  }
+  ngAfterViewInit() {
+    this.menuCtrl.enable(false);
+   
+  }
+  ngOnDestroy() {
+    this.menuCtrl.enable(true);
+  
   }
 }
 
